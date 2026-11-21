@@ -1,0 +1,31 @@
+
+{
+  "name": "minecraft-hub",
+  "version": "1.0.0",
+  "description": "Minecraft HUB desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.minecraft-hub.desktop",
+    "productName": "Minecraft HUB",
+    "directories": {
+      "output": "dist"
+    },
+    "files": ["index.html", "main.js", "package.json"],
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
